@@ -1,0 +1,15 @@
+*~
+*.org
+*saved-places
+*.elc
+*.pyc
+*#
+/.emacs.d/ctags-5.8.tar.gz
+/auto-save-list*
+/backups/*
+/ac-comphist.dat
+*.swp
+tramp
+/eproject.lst
+/saved-places
+/auto-complete
