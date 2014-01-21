@@ -192,3 +192,8 @@
 (add-to-list 'package-archives
      '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
+(require 'maxframe)
+(maximize-frame)
