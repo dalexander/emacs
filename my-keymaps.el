@@ -114,6 +114,7 @@
 (my-define-nv (kbd "ghh") (kbd "C-c C-c"))
 (my-define-nv (kbd "ghp") (kbd "C-c C-p"))
 (my-define-nv (kbd "ghr") (kbd "C-c C-r"))
+(my-define-nv (kbd "ghl") (kbd "0 v $ C-c C-r"))
 (my-define-nv (kbd "=") 'evil-indent)
 (my-define-nv (kbd ")") 'evil-next-close-paren)
 (my-define-nv (kbd "(") 'evil-previous-open-paren)

@@ -10,8 +10,12 @@
     read-file-name-completion-ignore-case t
     tab-width 4
     ido-use-virtual-buffers t
-    frame-title-format '("Emacs @ : %b %+%+ %f"))
+    frame-title-format '("Emacs @ : %b %+%+ %f")
+    initial-scratch-message ""
+    inhibit-startup-message t
+    inhibit-startup-echo-area-message "guerry")
 
+(tool-bar-mode 0)
 (show-paren-mode 1)
 (setq-default c-basic-offset 4)
 (setq-default indent-tabs-mode nil)
@@ -38,6 +42,10 @@
 ;; (add-to-list 'load-path "~/git/basics/.emacs.d/auto-complete")
 ;; (add-to-list 'load-path "~/git/basics/.emacs.d/ein")
 ;; (add-to-list 'load-path "~/git/basics/.emacs.d/multiple-cursors")
+
+(require 'maxframe)
+(maximize-frame)
+
 
 (require 'cython-mode)	       	
 (require 'magit)
@@ -73,7 +81,6 @@
   (load "elscreen" "ElScreen" t)
   (global-set-key "\C-t" 'elscreen-create)
   (my-define-niv "\C-t" 'elscreen-create))
-
 
 (define-key dired-mode-map (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
 (define-key dired-mode-map (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
@@ -168,9 +175,6 @@
 ;; (disable-theme 'wombat)
 
 ;; (setq x-select-enable-clipboard t)
-;; (global-set-key [f7] 'clipboard-kill-ring-save)
-;; (global-set-key [f6] 'clipboard-yank)
-
 (global-set-key [f8] 'copy-to-clipboard)
 (global-set-key [f9] 'paste-from-clipboard)
 
@@ -192,8 +196,3 @@
 (add-to-list 'package-archives
      '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
-
-(require 'maxframe)
-(maximize-frame)
