@@ -69,9 +69,6 @@
 (require 'my-keymaps)
 
 ;; ;; unstable
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories (concat default-directory ".emacs.d/auto-complete/ac-dict"))
-(ac-config-default)
 
 (global-linum-mode)
 
@@ -195,4 +192,9 @@
 
 (add-to-list 'package-archives
      '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories (concat default-directory ".emacs.d/auto-complete/ac-dict"))
+(ac-config-default)
 
