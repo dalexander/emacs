@@ -76,6 +76,7 @@
   (interactive)
   (require 'elscreen)
   (load "elscreen" "ElScreen" t)
+  (elscreen-start)
   (global-set-key "\C-t" 'elscreen-create)
   (my-define-niv "\C-t" 'elscreen-create))
 
