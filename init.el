@@ -78,7 +78,9 @@
   (load "elscreen" "ElScreen" t)
   (elscreen-start)
   (global-set-key "\C-t" 'elscreen-create)
-  (my-define-niv "\C-t" 'elscreen-create))
+  (my-define-niv "\C-t" 'elscreen-create)
+  (elscreen-create)
+  )
 
 (define-key dired-mode-map (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
 (define-key dired-mode-map (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
