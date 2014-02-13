@@ -79,6 +79,7 @@
   (elscreen-start)
   (global-set-key "\C-t" 'elscreen-create)
   (my-define-niv "\C-t" 'elscreen-create)
+  (my-define-nv "ght" 'elscreen-create)
   (elscreen-create)
   )
 
