@@ -115,6 +115,7 @@
 (my-define-nv (kbd "ghph") 'python-shell-send-buffer)
 (my-define-nv (kbd "ghpp") 'run-python)
 (my-define-nv (kbd "ghpe") 'python-shell-send-region)
+(my-define-nv (kbd "ghpd") 'python-shell-send-defun)
 (my-define-nv (kbd "ghpl") (kbd "0 v $ C-c C-r"))
 (my-define-nv (kbd "ghpv") 'virtualenv-activate)
 (my-define-nv (kbd "ghpc") (kbd "C-c C-v"))

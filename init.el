@@ -202,3 +202,6 @@
 (add-to-list 'ac-dictionary-directories (concat default-directory ".emacs.d/auto-complete/ac-dict"))
 (ac-config-default)
 
+
+(require 'edit-server)
+(edit-server-start)
