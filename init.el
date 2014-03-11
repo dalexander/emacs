@@ -205,3 +205,7 @@
 
 (require 'edit-server)
 (edit-server-start)
+
+(setq global-wakatime-mode t)
+(setq wakatime-cli-path (concat (getenv "HOME") ".emacs.d/wakatime/wakatime-cli.py") )
+(setq wakatime-api-key "56fcb503-5a20-4483-82b4-f47dd6642830")
