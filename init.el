@@ -34,15 +34,6 @@
 (add-to-list 'load-path (concat default-directory "/.emacs.d/ein"))
 (add-to-list 'load-path (concat default-directory "/.emacs.d/multiple-cursors"))
 
-;; (add-to-list 'load-path "~/git/basics/.emacs.d/")
-;; (add-to-list 'load-path "~/git/basics/.emacs.d/ace-jump-mode")
-;; (add-to-list 'load-path "~/git/basics/.emacs.d/evil")
-;; (add-to-list 'load-path "~/git/basics/.emacs.d/elscreen-1.4.6")
-;; (add-to-list 'load-path "~/git/basics/.emacs.d/magit-1.2.0")
-;; (add-to-list 'load-path "~/git/basics/.emacs.d/auto-complete")
-;; (add-to-list 'load-path "~/git/basics/.emacs.d/ein")
-;; (add-to-list 'load-path "~/git/basics/.emacs.d/multiple-cursors")
-
 (require 'maxframe)
 (maximize-frame)
 
@@ -148,20 +139,21 @@
 (evil-define-key 'normal dired-mode-map (kbd "gg") 'dired-back-to-top)
 (evil-define-key 'normal dired-mode-map (kbd "g") 'dired-jump-to-bottom)
 (define-key magit-status-mode-map (kbd "/") 'evil-search-forward)
-(require 'org)
 
-(evil-declare-key 'normal org-mode-map (kbd "<C-tab>") 'elscreen-next)
-(mapcar (lambda (state)
-    (evil-declare-key state org-mode-map
-      (kbd "M-l") 'org-metaright
-      (kbd "M-h") 'org-metaleft
-      (kbd "M-p") 'org-metaup
-      (kbd "M-n") 'org-metadown
-      (kbd "M-L") 'org-shiftmetaright
-      (kbd "M-H") 'org-shiftmetaleft
-      (kbd "M-P") 'org-shiftmetaup
-      (kbd "M-N") 'org-shiftmetadown))
-  '(normal insert))
+;; (require 'org)
+
+;; (evil-declare-key 'normal org-mode-map (kbd "<C-tab>") 'elscreen-next)
+;; (mapcar (lambda (state)
+;;     (evil-declare-key state org-mode-map
+;;       (kbd "M-l") 'org-metaright
+;;       (kbd "M-h") 'org-metaleft
+;;       (kbd "M-p") 'org-metaup
+;;       (kbd "M-n") 'org-metadown
+;;       (kbd "M-L") 'org-shiftmetaright
+;;       (kbd "M-H") 'org-shiftmetaleft
+;;       (kbd "M-P") 'org-shiftmetaup
+;;       (kbd "M-N") 'org-shiftmetadown))
+;;   '(normal insert))
 
 
 
