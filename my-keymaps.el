@@ -93,6 +93,7 @@
 (my-define-nv (kbd "gt") 'elscreen-next)
 (my-define-nv (kbd "gT") 'elscreen-previous)
 (my-define-nv (kbd "gs") 'magit-status)
+(my-define-nv (kbd "gcgc") (kbd "C-c C-c"))
 (my-define-nv (kbd "g.") 'ido-dired)
 (my-define-nv (kbd "g,") 'evilnc-comment-or-uncomment-lines)
 (my-define-nv (kbd "g'") 'evilnc-copy-and-comment-lines)
