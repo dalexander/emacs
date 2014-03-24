@@ -140,22 +140,6 @@
 (evil-define-key 'normal dired-mode-map (kbd "g") 'dired-jump-to-bottom)
 (define-key magit-status-mode-map (kbd "/") 'evil-search-forward)
 
-;; (require 'org)
-
-;; (evil-declare-key 'normal org-mode-map (kbd "<C-tab>") 'elscreen-next)
-;; (mapcar (lambda (state)
-;;     (evil-declare-key state org-mode-map
-;;       (kbd "M-l") 'org-metaright
-;;       (kbd "M-h") 'org-metaleft
-;;       (kbd "M-p") 'org-metaup
-;;       (kbd "M-n") 'org-metadown
-;;       (kbd "M-L") 'org-shiftmetaright
-;;       (kbd "M-H") 'org-shiftmetaleft
-;;       (kbd "M-P") 'org-shiftmetaup
-;;       (kbd "M-N") 'org-shiftmetadown))
-;;   '(normal insert))
-
-
 
 (load-file (concat default-directory ".emacs.d/emacs-for-python/epy-init.el"))
 (setq skeleton-pair nil)
@@ -201,3 +185,19 @@
 (setq global-wakatime-mode t)
 (setq wakatime-cli-path (concat (getenv "HOME") ".emacs.d/wakatime/wakatime-cli.py") )
 (setq wakatime-api-key "56fcb503-5a20-4483-82b4-f47dd6642830")
+
+(require 'org)
+
+(evil-declare-key 'normal org-mode-map (kbd "<C-tab>") 'elscreen-next)
+(mapcar (lambda (state)
+    (evil-declare-key state org-mode-map
+      (kbd "M-l") 'org-metaright
+      (kbd "M-h") 'org-metaleft
+      (kbd "M-p") 'org-metaup
+      (kbd "M-n") 'org-metadown
+      (kbd "M-L") 'org-shiftmetaright
+      (kbd "M-H") 'org-shiftmetaleft
+      (kbd "M-P") 'org-shiftmetaup
+      (kbd "M-N") 'org-shiftmetadown))
+  '(normal insert))
+
