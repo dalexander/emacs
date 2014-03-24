@@ -80,6 +80,7 @@
 (my-define-niv (kbd "C-4") 'toggle-window-split)
 (my-define-niv (kbd "C-5") 'rotate-windows)
 
+(my-define-nv "ghmd" 'vc-version-diff)
 (my-define-nv "zv" 'vc-version-diff)
 (my-define-nv (kbd "<backtab>") (kbd "<<"))
 (my-define-nv "Q" 'call-last-kbd-macro)
@@ -93,6 +94,7 @@
 (my-define-nv (kbd "gt") 'elscreen-next)
 (my-define-nv (kbd "gT") 'elscreen-previous)
 (my-define-nv (kbd "gs") 'magit-status)
+(my-define-nv (kbd "ghms") 'magit-status)
 (my-define-nv (kbd "gcgc") (kbd "C-c C-c"))
 (my-define-nv (kbd "g.") 'ido-dired)
 (my-define-nv (kbd "g,") 'evilnc-comment-or-uncomment-lines)
