@@ -154,8 +154,7 @@
 ;; (setq x-select-enable-clipboard t)
 (global-set-key [f8] 'copy-to-clipboard)
 (global-set-key [f9] 'paste-from-clipboard)
-
-
+(global-set-key (kbd "C-S-v") 'paste-from-clipboard)
 
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
