@@ -200,7 +200,7 @@
       (kbd "M-N") 'org-shiftmetadown))
   '(normal insert))
 
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook 'haskell-indent-mode)
 
 (require 'tramp)
 (setq tramp-default-method "ssh")

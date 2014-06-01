@@ -109,6 +109,7 @@
 (my-define-nv (kbd "gha") 'apropos-command)
 (my-define-nv (kbd "ght") 'my-elscreen-load)
 (my-define-nv (kbd "ghw") 'elscreen-kill)
+(my-define-nv (kbd "ghc") 'compile)
 (my-define-nv (kbd "g0") 'delete-window)
 (my-define-nv (kbd "g1") 'delete-other-windows)
 (my-define-nv (kbd "g2") 'split-window-below)
