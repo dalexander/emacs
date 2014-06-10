@@ -49,15 +49,15 @@
 (setq-default save-place t)
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
-(require 'surround)
-(global-surround-mode 1)
 (require 'ido)
 (setq ido-enable-flex-matching t
     ido-everywhere t
     ido-use-filename-at-point nil)
 (ido-mode 1) 
-(require 'my-functions)
+(require 'evil)
+(evil-mode 1)
 (require 'my-keymaps)
+(require 'my-functions)
 
 ;; ;; unstable
 
@@ -178,12 +178,6 @@
 (ac-config-default)
 
 
-(require 'edit-server)
-(edit-server-start)
-
-(setq global-wakatime-mode t)
-(setq wakatime-cli-path (concat (getenv "HOME") ".emacs.d/wakatime/wakatime-cli.py") )
-(setq wakatime-api-key "56fcb503-5a20-4483-82b4-f47dd6642830")
 
 (require 'org)
 
@@ -204,3 +198,28 @@
 
 (require 'tramp)
 (setq tramp-default-method "ssh")
+
+;; set up pylint
+(setq pycodechecker "pylint_wrapper.py")
+(setq pycodechecker-args " -P /home/russell/app/bin")
+(when (load "flymake" t)
+  (defun flymake-pylint-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+               'flymake-create-temp-inplace))
+       (local-file (file-relative-name
+            temp-file
+            (file-name-directory buffer-file-name))))
+      (list pycodechecker (list pycodechecker-args local-file))))
+
+  (add-to-list 'flymake-allowed-file-name-masks
+           '("\\.py\\'" flymake-pylint-init))
+
+  (defun flymake-show-error-at-point ()
+    (when (get-char-property (point) 'flymake-overlay)
+      (let ((help (get-char-property (point) 'help-echo)))
+    (if help (message "%s" help)))))
+
+  (add-hook 'post-command-hook 'flymake-show-error-at-point)
+  (custom-set-faces
+   '(flymake-errline ((((class color)) (:underline "red"))))
+   '(flymake-warnline ((((class color)) (:underline "orange"))))))

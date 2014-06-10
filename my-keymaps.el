@@ -1,6 +1,3 @@
-(require 'evil)
-(evil-mode 1)
-
 (require 'surround)
 (global-surround-mode 1)
 
@@ -139,12 +136,12 @@
 (key-chord-mode 1)
 (key-chord-define-global "jk"  'evil-normal-state)
 
-(key-chord-define evil-normal-state-map " c"  #'ace-jump-char-mode)
-(key-chord-define evil-visual-state-map " c"  #'ace-jump-char-mode)
-(key-chord-define evil-normal-state-map " l"  #'ace-jump-line-mode)
-(key-chord-define evil-visual-state-map " l"  #'ace-jump-line-mode)
-(key-chord-define evil-normal-state-map " w"  #'ace-jump-word-mode)
-(key-chord-define evil-visual-state-map " w"  #'ace-jump-word-mode)
+;; (key-chord-define evil-normal-state-map " c"  #'ace-jump-char-mode)
+;; (key-chord-define evil-visual-state-map " c"  #'ace-jump-char-mode)
+;; (key-chord-define evil-normal-state-map " l"  #'ace-jump-line-mode)
+;; (key-chord-define evil-visual-state-map " l"  #'ace-jump-line-mode)
+;; (key-chord-define evil-normal-state-map " w"  #'ace-jump-word-mode)
+;; (key-chord-define evil-visual-state-map " w"  #'ace-jump-word-mode)
 
 ;; F9 creates a new elscreen, shift-F9 kills it
 (global-set-key (kbd "C-c t a b e") 'elscreen-create)
