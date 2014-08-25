@@ -71,8 +71,6 @@
   (elscreen-create)
   )
 
-(define-key dired-mode-map (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
-(define-key dired-mode-map (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
 
 ;; Write backup files to own directory
 (setq backup-directory-alist
@@ -103,9 +101,14 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
-(require 'dired-details)
-(setq-default dired-details-hidden-string "--- ")
-(dired-details-install)
+;; (define-key dired-mode-map (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
+;; (define-key dired-mode-map (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
+;; (require 'dired-details)
+;; (setq-default dired-details-hidden-string "--- ")
+;; (dired-details-install)
+;; (evil-define-key 'normal dired-mode-map (kbd "gg") 'dired-back-to-top)
+;; (evil-define-key 'normal dired-mode-map (kbd "g") 'dired-jump-to-bottom)
+;; (define-key magit-status-mode-map (kbd "/") 'evil-search-forward)
 (require 'ein)
 (require 'websocket)
 (require 'request)
@@ -127,9 +130,6 @@
 (define-key comint-mode-map (kbd "C-n") 'comint-next-matching-input-from-input)
 
 
-(evil-define-key 'normal dired-mode-map (kbd "gg") 'dired-back-to-top)
-(evil-define-key 'normal dired-mode-map (kbd "g") 'dired-jump-to-bottom)
-(define-key magit-status-mode-map (kbd "/") 'evil-search-forward)
 
 (scroll-bar-mode -1)
 (load-theme 'wombat t)
