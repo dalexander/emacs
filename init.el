@@ -54,6 +54,7 @@
 (evil-mode 1)
 (require 'my-keymaps)
 (require 'my-functions)
+(require 'my-python)
 
 ;; ;; unstable
 
@@ -94,12 +95,6 @@
 
 ;; (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
-(require 'package)
-(package-initialize)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 ;; (define-key dired-mode-map (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
 ;; (define-key dired-mode-map (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
@@ -109,9 +104,6 @@
 ;; (evil-define-key 'normal dired-mode-map (kbd "gg") 'dired-back-to-top)
 ;; (evil-define-key 'normal dired-mode-map (kbd "g") 'dired-jump-to-bottom)
 ;; (define-key magit-status-mode-map (kbd "/") 'evil-search-forward)
-(require 'ein)
-(require 'websocket)
-(require 'request)
 
 (defadvice evil-find-char-to (around advice-a activate)
   (progn
@@ -128,22 +120,7 @@
 (global-set-key (kbd "C-S-v") 'paste-from-clipboard)
 (global-set-key (kbd "C-S-c") 'copy-to-clipboard)
 
-(require 'my-python)
-
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-(el-get 'sync)
-
-(add-to-list 'package-archives
-     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(require 'my-packages)
 
 (add-hook 'haskell-mode-hook 'haskell-indent-mode)
 
