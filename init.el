@@ -80,31 +80,6 @@
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
 
-;; (require 'magit)
-;; ;; full screen magit-status
-;; (defadvice magit-status (around magit-fullscreen activate)
-;;   (window-configuration-to-register :magit-fullscreen)
-;;   ad-do-it
-;;   (delete-other-windows))
-
-;; (defun magit-quit-session ()
-;;   "Restores the previous window configuration and kills the magit buffer"
-;;   (interactive)
-;;   (kill-buffer)
-;;   (jump-to-register :magit-fullscreen))
-
-;; (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-
-
-;; (define-key dired-mode-map (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
-;; (define-key dired-mode-map (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
-;; (require 'dired-details)
-;; (setq-default dired-details-hidden-string "--- ")
-;; (dired-details-install)
-;; (evil-define-key 'normal dired-mode-map (kbd "gg") 'dired-back-to-top)
-;; (evil-define-key 'normal dired-mode-map (kbd "g") 'dired-jump-to-bottom)
-;; (define-key magit-status-mode-map (kbd "/") 'evil-search-forward)
-
 (defadvice evil-find-char-to (around advice-a activate)
   (progn
     (forward-char)
