@@ -12,6 +12,7 @@
 (global-unset-key "\C-r")
 (global-unset-key "\M-t")
 (global-set-key [f5] 'compile)
+(global-set-key (kbd "C-r") 'undo-tree-redo)
 
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
 (define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
@@ -36,6 +37,7 @@
 (my-define-niv "\C-n" 'evil-next-line)
 (my-define-niv "\C-p" 'evil-previous-line)
 (my-define-niv "\C-k" 'kill-line)
+(my-define-niv "u" 'undo-tree-undo)
 
 (my-define-nv "ghmd" 'vc-version-diff)
 (my-define-nv "zv" 'vc-version-diff)

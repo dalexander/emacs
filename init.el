@@ -57,6 +57,7 @@
 (require 'my-python)
 
 ;; ;; unstable
+(require 'undo-tree)
 
 (global-linum-mode)
 
