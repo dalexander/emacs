@@ -32,7 +32,6 @@
 (add-to-list 'load-path (concat default-directory "/.emacs.d/magit-1.2.0"))
 (add-to-list 'load-path (concat default-directory "/.emacs.d/auto-complete"))
 (add-to-list 'load-path (concat default-directory "/.emacs.d/ein"))
-(add-to-list 'load-path (concat default-directory "/.emacs.d/multiple-cursors"))
 
 (require 'maxframe)
 (maximize-frame)
@@ -105,13 +104,6 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
-
-(require 'multiple-cursors)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c v") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-all-words-like-this)
 
 (require 'dired-details)
 (setq-default dired-details-hidden-string "--- ")
