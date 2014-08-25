@@ -37,7 +37,6 @@
 (maximize-frame)
 
 (require 'cython-mode)	       	
-(require 'magit)
 (require 'dirtree)
 (require 'windata)
 (require 'tree-mode)
@@ -80,19 +79,20 @@
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
 
-;; full screen magit-status
-(defadvice magit-status (around magit-fullscreen activate)
-  (window-configuration-to-register :magit-fullscreen)
-  ad-do-it
-  (delete-other-windows))
+;; (require 'magit)
+;; ;; full screen magit-status
+;; (defadvice magit-status (around magit-fullscreen activate)
+;;   (window-configuration-to-register :magit-fullscreen)
+;;   ad-do-it
+;;   (delete-other-windows))
 
-(defun magit-quit-session ()
-  "Restores the previous window configuration and kills the magit buffer"
-  (interactive)
-  (kill-buffer)
-  (jump-to-register :magit-fullscreen))
+;; (defun magit-quit-session ()
+;;   "Restores the previous window configuration and kills the magit buffer"
+;;   (interactive)
+;;   (kill-buffer)
+;;   (jump-to-register :magit-fullscreen))
 
-(define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+;; (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
 (require 'package)
 (package-initialize)
@@ -118,18 +118,6 @@
     (forward-char)
     ad-do-it)
   )
-(defadvice comint-previous-matching-input-from-input (around advice-a activate)
-  (let ((p1 (point)))
-    ad-do-it
-    (goto-char p1)))
-(defadvice comint-next-matching-input-from-input (around advice-a activate)
-  (let ((p1 (point)))
-    ad-do-it
-    (goto-char p1)))
-(define-key comint-mode-map (kbd "C-p") 'comint-previous-matching-input-from-input)
-(define-key comint-mode-map (kbd "C-n") 'comint-next-matching-input-from-input)
-
-
 
 (scroll-bar-mode -1)
 (load-theme 'wombat t)
