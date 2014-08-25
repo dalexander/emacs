@@ -36,14 +36,12 @@
 (require 'maxframe)
 (maximize-frame)
 
-
 (require 'cython-mode)	       	
 (require 'magit)
 (require 'dirtree)
 (require 'windata)
 (require 'tree-mode)
 (require 'goto-last-change)
-;; (require 'cl)
 (require 'saveplace)
 (setq-default save-place t)
 (require 'uniquify)
@@ -128,15 +126,10 @@
 (define-key comint-mode-map (kbd "C-p") 'comint-previous-matching-input-from-input)
 (define-key comint-mode-map (kbd "C-n") 'comint-next-matching-input-from-input)
 
+
 (evil-define-key 'normal dired-mode-map (kbd "gg") 'dired-back-to-top)
 (evil-define-key 'normal dired-mode-map (kbd "g") 'dired-jump-to-bottom)
 (define-key magit-status-mode-map (kbd "/") 'evil-search-forward)
-
-
-(load-file (concat default-directory ".emacs.d/emacs-for-python/epy-init.el"))
-(setq skeleton-pair nil)
-(epy-setup-ipython)
-;; (epy-setup-checker "pyflakes %f")
 
 (scroll-bar-mode -1)
 (load-theme 'wombat t)
@@ -144,10 +137,10 @@
 ;; (disable-theme 'wombat)
 
 ;; (setq x-select-enable-clipboard t)
-(global-set-key [f8] 'copy-to-clipboard)
-(global-set-key [f9] 'paste-from-clipboard)
 (global-set-key (kbd "C-S-v") 'paste-from-clipboard)
+(global-set-key (kbd "C-S-c") 'copy-to-clipboard)
 
+(require 'my-python)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -164,54 +157,7 @@
 (add-to-list 'package-archives
      '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories (concat default-directory ".emacs.d/auto-complete/ac-dict"))
-(ac-config-default)
-
-
-
-(require 'org)
-
-(evil-declare-key 'normal org-mode-map (kbd "<C-tab>") 'elscreen-next)
-(mapcar (lambda (state)
-    (evil-declare-key state org-mode-map
-      (kbd "M-l") 'org-metaright
-      (kbd "M-h") 'org-metaleft
-      (kbd "M-p") 'org-metaup
-      (kbd "M-n") 'org-metadown
-      (kbd "M-L") 'org-shiftmetaright
-      (kbd "M-H") 'org-shiftmetaleft
-      (kbd "M-P") 'org-shiftmetaup
-      (kbd "M-N") 'org-shiftmetadown))
-  '(normal insert))
-
 (add-hook 'haskell-mode-hook 'haskell-indent-mode)
 
 (require 'tramp)
 (setq tramp-default-method "ssh")
-
-;; set up pylint
-(setq pycodechecker "pylint_wrapper.py")
-(setq pycodechecker-args " -P /home/russell/app/bin")
-(when (load "flymake" t)
-  (defun flymake-pylint-init ()
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-               'flymake-create-temp-inplace))
-       (local-file (file-relative-name
-            temp-file
-            (file-name-directory buffer-file-name))))
-      (list pycodechecker (list pycodechecker-args local-file))))
-
-  (add-to-list 'flymake-allowed-file-name-masks
-           '("\\.py\\'" flymake-pylint-init))
-
-  (defun flymake-show-error-at-point ()
-    (when (get-char-property (point) 'flymake-overlay)
-      (let ((help (get-char-property (point) 'help-echo)))
-    (if help (message "%s" help)))))
-
-  (add-hook 'post-command-hook 'flymake-show-error-at-point)
-  (custom-set-faces
-   '(flymake-errline ((((class color)) (:underline "red"))))
-   '(flymake-warnline ((((class color)) (:underline "orange"))))))
