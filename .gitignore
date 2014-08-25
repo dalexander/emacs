@@ -13,3 +13,7 @@ tramp
 /eproject.lst
 /saved-places
 /auto-complete
+/el-get/*
+/elpa/*
+/eshell/*
+
