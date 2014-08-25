@@ -40,7 +40,7 @@
 (my-define-niv "u" 'undo-tree-undo)
 
 (my-define-nv "ghmd" 'vc-version-diff)
-(my-define-nv "zv" 'vc-version-diff)
+(my-define-nv "gs" 'vc-version-diff)
 (my-define-nv "Q" 'call-last-kbd-macro)
 (my-define-nv (kbd "p") 'evil-paste-after2)
 (my-define-nv (kbd "P") 'evil-paste-before2)
