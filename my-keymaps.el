@@ -37,8 +37,8 @@
 (my-define-niv "\C-n" 'evil-next-line)
 (my-define-niv "\C-p" 'evil-previous-line)
 (my-define-niv "\C-k" 'kill-line)
-(my-define-niv "u" 'undo-tree-undo)
 
+(my-define-nv "u" 'undo-tree-undo)
 (my-define-nv "ghmd" 'vc-version-diff)
 (my-define-nv "gs" 'vc-version-diff)
 (my-define-nv "Q" 'call-last-kbd-macro)
