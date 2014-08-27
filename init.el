@@ -54,7 +54,7 @@
 (evil-mode 1)
 (require 'my-keymaps)
 (require 'my-functions)
-(require 'my-python)
+;; (require 'my-python)
 
 ;; ;; unstable
 (require 'undo-tree)
@@ -98,7 +98,8 @@
 
 (require 'my-packages)
 
-(add-hook 'haskell-mode-hook 'haskell-indent-mode)
+(require 'my-haskell)
+
 
 (require 'tramp)
 (setq tramp-default-method "ssh")
