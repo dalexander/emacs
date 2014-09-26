@@ -6,8 +6,8 @@
   (let ((p1 (point)))
     ad-do-it
     (goto-char p1)))
-(define-key comint-mode-map (kbd "C-p") 'comint-previous-matching-input-from-input)
-(define-key comint-mode-map (kbd "C-n") 'comint-next-matching-input-from-input)
+(define-key comint-mode-map (kbd "M-p") 'comint-previous-matching-input-from-input)
+(define-key comint-mode-map (kbd "M-n") 'comint-next-matching-input-from-input)
 
 (load-file (concat default-directory ".emacs.d/emacs-for-python/epy-init.el"))
 (setq skeleton-pair nil)
