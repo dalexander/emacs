@@ -44,11 +44,30 @@ Save in REGISTER or in the kill-ring with YANK-HANDLER."
   )
 
 
+(defun get-clipboard-contents-as-string ()
+  "Return the value of the clipboard contents as a string."
+  (let ((x-select-enable-clipboard t))
+    (or (x-cut-buffer-or-selection-value)
+        x-last-selected-text-clipboard)))
+
+(defun insert-clipboard-contents ()
+  "Insert the value of the current X selection at point.
+Uses the clipboard value if it is defined or not empty, otherwise
+falls back on the primary selection."
+  (interactive)
+  (let ((text (get-clipboard-contents-as-string)))
+    (when text
+      ;; This operation is very much like a yank, so set mark like
+      ;; yank does.  Note that the "longlines" mode advice on this
+      ;; function depends on mark having been set.
+      (push-mark)
+      (insert text))))
 
 (evil-define-command paste-from-clipboard()
   (if (display-graphic-p)
       (progn
-        (clipboard-yank)
+        (insert-clipboard-contents)
+        ;; (clipboard-yank)
         (message "grapics active")
         )
     (insert (shell-command-to-string "xsel -o -b"))
