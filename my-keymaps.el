@@ -18,6 +18,7 @@
 (define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
 (define-key evil-insert-state-map "\C-e" 'end-of-line)
 (define-key evil-visual-state-map "\C-e" 'evil-end-of-line)
+(when (not (display-graphic-p)) (define-key evil-insert-state-map "jk" 'evil-normal-state))
 
 (defmacro my-define-niv (in out) `(progn
                                 (define-key evil-normal-state-map ,in ,out)
