@@ -12,13 +12,10 @@
 (load-file (concat my-home-directory ".emacs.d/emacs-for-python/epy-init.el"))
 (setq skeleton-pair nil)
 (epy-setup-ipython)
-;; (epy-setup-checker "pyflakes %f")
+(epy-setup-checker "pyflakes %f")
 
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories (concat my-home-directory ".emacs.d/auto-complete/ac-dict"))
 (ac-config-default)
-
-(require 'flymake-python-pyflakes)
-(add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
 
 (provide 'my-python)
