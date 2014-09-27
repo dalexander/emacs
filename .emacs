@@ -1,7 +1,7 @@
-(defconst default-directory (concat (getenv "HOME") "/"))
-(defconst dot-emacs (concat default-directory ".emacs.d/init.el"))
-(defconst keymaps-file (concat default-directory ".emacs.d/my-keymaps.el"))
-(defconst functions-file (concat default-directory ".emacs.d/my-functions.el"))
+(defconst my-home-directory (concat (getenv "HOME") "/"))
+(defconst dot-emacs (concat my-home-directory ".emacs.d/init.el"))
+(defconst keymaps-file (concat my-home-directory ".emacs.d/my-keymaps.el"))
+(defconst functions-file (concat my-home-directory ".emacs.d/my-functions.el"))
 
 (require 'bytecomp)
 (setq compiled-dot-emacs (byte-compile-dest-file dot-emacs))

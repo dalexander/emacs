@@ -3,7 +3,7 @@
 (add-hook 'c-mode-hook 'rcc-style)
 (add-hook 'python-mode-hook 'global-linum-mode)
 
-(setq save-place-file (concat default-directory ".emacs.d/saved-places")
+(setq save-place-file (concat my-home-directory ".emacs.d/saved-places")
     save-interprogram-paste-before-kill t
     apropos-do-all t
     mouse-yank-at-point t
@@ -25,13 +25,13 @@
 (defalias 'yas/current-snippet-table 'yas--get-snippet-tables)
 (defvar ido-cur-item nil)
 
-(add-to-list 'load-path (concat default-directory "/.emacs.d/"))
-(add-to-list 'load-path (concat default-directory "/.emacs.d/ace-jump-mode"))
-(add-to-list 'load-path (concat default-directory "/.emacs.d/evil"))
-(add-to-list 'load-path (concat default-directory "/.emacs.d/elscreen-1.4.6"))
-(add-to-list 'load-path (concat default-directory "/.emacs.d/magit-1.2.0"))
-(add-to-list 'load-path (concat default-directory "/.emacs.d/auto-complete"))
-(add-to-list 'load-path (concat default-directory "/.emacs.d/ein"))
+(add-to-list 'load-path (concat my-home-directory "/.emacs.d/"))
+(add-to-list 'load-path (concat my-home-directory "/.emacs.d/ace-jump-mode"))
+(add-to-list 'load-path (concat my-home-directory "/.emacs.d/evil"))
+(add-to-list 'load-path (concat my-home-directory "/.emacs.d/elscreen-1.4.6"))
+(add-to-list 'load-path (concat my-home-directory "/.emacs.d/magit-1.2.0"))
+(add-to-list 'load-path (concat my-home-directory "/.emacs.d/auto-complete"))
+(add-to-list 'load-path (concat my-home-directory "/.emacs.d/ein"))
 
 (require 'maxframe)
 (maximize-frame)

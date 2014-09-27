@@ -9,13 +9,13 @@
 (define-key comint-mode-map (kbd "M-p") 'comint-previous-matching-input-from-input)
 (define-key comint-mode-map (kbd "M-n") 'comint-next-matching-input-from-input)
 
-(load-file (concat default-directory ".emacs.d/emacs-for-python/epy-init.el"))
+(load-file (concat my-home-directory ".emacs.d/emacs-for-python/epy-init.el"))
 (setq skeleton-pair nil)
 (epy-setup-ipython)
 ;; (epy-setup-checker "pyflakes %f")
 
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories (concat default-directory ".emacs.d/auto-complete/ac-dict"))
+(add-to-list 'ac-dictionary-directories (concat my-home-directory ".emacs.d/auto-complete/ac-dict"))
 (ac-config-default)
 
 ;; set up pylint
