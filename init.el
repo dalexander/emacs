@@ -88,7 +88,7 @@
   )
 
 (scroll-bar-mode -1)
-(load-theme 'wombat t)
+(when (display-graphic-p) (load-theme 'wombat t))
 (setq evil-default-cursor t)
 ;; (disable-theme 'wombat)
 
