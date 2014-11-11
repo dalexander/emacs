@@ -54,6 +54,7 @@
 (evil-mode 1)
 (require 'my-keymaps)
 (require 'my-functions)
+(require 'my-haskell)
 (require 'my-python)
 
 ;; ;; unstable
@@ -98,9 +99,11 @@
 
 (require 'my-packages)
 
-(require 'my-haskell)
 
 
 (require 'tramp)
 (setq tramp-default-method "ssh")
 (setenv "INPUTRC" "/dev/null")
+
+(autoload 'rust-mode "rust-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
