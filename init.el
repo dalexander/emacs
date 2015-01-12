@@ -107,3 +107,39 @@
 
 (autoload 'rust-mode "rust-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+
+(require 'flymake-rust)
+(add-hook 'rust-mode-hook 'flymake-rust-load)
+
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+
+(defun my:ac-header-init ()
+  (require 'auto-complete-c-headers)
+  (add-to-list 'ac-sources 'ac-source-c-headers)
+  (add-to-list 'achead:include-directories '"/usr/include/c++/4.8")
+  (add-to-list 'achead:include-directories '"/usr/include/x86_64-linux-gnu/c++/4.8")
+  (add-to-list 'achead:include-directories '"/usr/include/c++/4.8/backward")
+  (add-to-list 'achead:include-directories '"/usr/lib/gcc/x86_64-linux-gnu/4.8/include")
+  (add-to-list 'achead:include-directories '"/usr/local/include")
+  (add-to-list 'achead:include-directories '"/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed")
+  (add-to-list 'achead:include-directories '"/usr/include/x86_64-linux-gnu")
+  (add-to-list 'achead:include-directories '"/usr/include")
+)
+
+(add-hook 'c++-mode-hook 'my:ac-header-init)
+(add-hook 'c-mode-hook 'my:ac-header-init)
+(define-key global-map (kbd "C-c ;") 'iedit-mode)
+
+(defun my:google-cpp-lint-init ()
+  (require 'flymake-google-cpplint)
+  (custom-set-variables
+   '(flymake-google-cpplint-command "/usr/local/bin/cpplint"))
+  (flymake-google-cpplint-load)
+)
+(add-hook 'c++-mode-hook 'my:google-cpp-lint-init)
+(add-hook 'c-mode-hook 'my:google-cpp-lint-init)
+
+; list-packages deps: (el-complete, auto-complete, auto-complete-c-headers, iedit, flymake-google-cpp-lint)
+
